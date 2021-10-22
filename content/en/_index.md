@@ -1,11 +1,11 @@
 ---
-title: Profilerpedia
+title: Home
 cascade:
   type: docs
 ---
-Welcome to Profilerpedia.
+Profilerpedia is a catalog of Profilers, Profiler Data Formats they output, the
+UIs that can analyse/visualise those data formats, and data format converters.
 
-I mapped out over 100 Profilers, what Profile Data Formats they output, and
-what Profiler UIs can visualise those formats
+<img src="graph.png">
 
 See the [announcement blog post](https://www.markhansen.co.nz/profilerpedia/).
