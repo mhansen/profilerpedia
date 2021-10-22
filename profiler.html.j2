@@ -1,8 +1,11 @@
 ---
 title: {{ profiler.Index }} {{ profiler.Star }}
 ---
+{% if profiler.Docs %}
+  <p><a href="{{ profiler.Docs }}">Docs</a></p>
+{% endif %}
 {% if profiler.Platform %}
-  <p>Platform: {{ profiler.Platform }}</p>
+  <p>Target Platform: {{ profiler.Platform }}</p>
 {% endif %}
 {% if profiler.Notes %}
   <p>Notes: {{ profiler.Notes }}</p>

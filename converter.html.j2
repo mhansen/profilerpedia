@@ -1,0 +1,9 @@
+---
+title: {{ converter.Converter }}
+---
+<p><a href="{{ converter.Docs }}">Docs</a></p>
+{% if converter.Note %}
+<p>{{ converter.Note }}</p>
+{% endif %}
+<p>Converts From: <a href="/formats/{{ formats_by_name[converter.From].Slug }}/">{{ converter.From }}</a></p>
+<p>Converts To: <a href="/formats/{{ formats_by_name[converter.To].Slug }}/">{{ converter.To }}</a></p>
