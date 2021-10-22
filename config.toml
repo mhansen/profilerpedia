@@ -159,6 +159,9 @@ sidebar_search_disable = true
 # Don't truncate
 sidebar_menu_truncate = 1000
 
+# Sidebar generation is slow
+sidebar_cache_limit = 100
+
 # Don't show them all
 ul_show = 0
 
