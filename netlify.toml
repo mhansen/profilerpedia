@@ -1,0 +1,6 @@
+[build]
+  command = "git submodule update --init --recursive && jupyter nbconvert --to notebook --inplace --execute Generate.ipynb && hugo"
+  publish = "public"
+
+[build.environment]
+  HUGO_VERSION = "0.88.1"
