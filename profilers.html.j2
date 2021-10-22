@@ -1,8 +1,9 @@
 ---
 title: Profilers
+url: /profilers/
 ---
 {% for profiler in profilers %}
-  <h2 id="profiler:{{ profiler.Index }}">{{ profiler.Index }} {{ profiler.Star }}</h2>
+  <h2 id="{{ profiler.Index }}">{{ profiler.Index }} {{ profiler.Star }}</h2>
   {% if profiler.Platform %}
     <p>Platform: {{ profiler.Platform }}</p>
   {% endif %}
@@ -12,7 +13,7 @@ title: Profilers
   <p>Output Formats:</p>
   <ul>
   {% for output in outputs_by_profiler[profiler.Index] %}
-    <li><a href="#format:{{ output.Format }}">{{ output.Format }}</a>
+    <li><a href="/formats/#{{ output.Format }}">{{ output.Format }}</a>
       {% if output.Docs %}
        [<a href="{{ output.Docs }}">Docs</a>]
       {% endif %}

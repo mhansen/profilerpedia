@@ -1,12 +1,13 @@
 ---
 title: Formats
+url: /formats/
 ---
 {% for format in formats %}
- <h2 id="format:{{ format.Index }}">{{ format.Index }} {{ format.Star}}</h2>
+ <h2 id="{{ format.Index }}">{{ format.Index }} {{ format.Star}}</h2>
   <p>Output By:</p>
   <ul>
   {% for output in outputs_by_format[format.Index] %}
-    <li><a href="#profiler:{{ output.Profiler }}">{{ output.Profiler }}</a>
+    <li><a href="/profilers/#{{ output.Profiler }}">{{ output.Profiler }}</a>
       {% if output.Docs %}
        [<a href="{{ output.Docs }}">Docs</a>]
       {% endif %}
@@ -18,7 +19,7 @@ title: Formats
   <p>Visualise With:</p>
   <ul>
   {% for visualise in visualises_by_format[format.Index] %}
-    <li><a href="#ui:{{ visualise.UI }}">{{ visualise.UI }}</a>
+    <li><a href="/uis/#{{ visualise.UI }}">{{ visualise.UI }}</a>
       {% if visualise.Docs %}
        [<a href="{{ visualise.Docs }}">Docs</a>]
       {% endif %}
@@ -30,7 +31,7 @@ title: Formats
   <p>Converts From:</p>
   <ul>
   {% for converter in converters_by_to[format.Index] %}
-    <li><a href="#format:{{ converter.From }}">{{ converter.From }}</a>
+    <li><a href="/formats/#{{ converter.From }}">{{ converter.From }}</a>
       via
       {% if converter.Docs %}
        <a href="{{ converter.Docs }}">{{ converter.Converter }}</a>
@@ -45,7 +46,7 @@ title: Formats
   <p>Converts To:</p>
   <ul>
   {% for converter in converters_by_from[format.Index] %}
-    <li><a href="#format:{{ converter.To }}">{{ converter.To }}</a>
+    <li><a href="/formats/#{{ converter.To }}">{{ converter.To }}</a>
       via
       {% if converter.Docs %}
        <a href="{{ converter.Docs }}">{{ converter.Converter }}</a>
