@@ -1,0 +1,57 @@
+---
+title: {{ format.Index }} {{ format.Star }}
+---
+<p>Output By:</p>
+<ul>
+{% for output in outputs_by_format[format.Index] %}
+  <li><a href="/profilers/{{ profilers_by_name[output.Profiler].Slug }}/">{{ output.Profiler }}</a>
+    {% if output.Docs %}
+      [<a href="{{ output.Docs }}">Docs</a>]
+    {% endif %}
+  </li>
+{% else %}
+  <li>Unknown</li>
+{% endfor %}
+</ul>
+<p>Visualise With:</p>
+<ul>
+{% for visualise in visualises_by_format[format.Index] %}
+  <li><a href="/uis/{{ uis_by_name[visualise.UI].Slug }}/">{{ visualise.UI }}</a>
+    {% if visualise.Docs %}
+      [<a href="{{ visualise.Docs }}">Docs</a>]
+    {% endif %}
+  </li>
+{% else %}
+  <li>Unknown</li>
+{% endfor %}
+</ul>
+<p>Converts From:</p>
+<ul>
+{% for converter in converters_by_to[format.Index] %}
+  <li><a href="/formats/{{ formats_by_name[converter.From].Slug }}/">{{ converter.From }}</a>
+    via
+    {% if converter.Docs %}
+      <a href="{{ converter.Docs }}">{{ converter.Converter }}</a>
+    {% else %}
+      {{ converter.Converter }}
+    {% endif %}
+  </li>
+{% else %}
+  <li>Unknown</li>
+{% endfor %}
+</ul>
+<p>Converts To:</p>
+<ul>
+{% for converter in converters_by_from[format.Index] %}
+  <li><a href="/formats/{{ formats_by_name[converter.To].Slug }}/">{{ converter.To }}</a>
+    via
+    {% if converter.Docs %}
+      <a href="{{ converter.Docs }}">{{ converter.Converter }}</a>
+    {% else %}
+      {{ converter.Converter }}
+    {% endif %}
+  </li>
+{% else %}
+  <li>Unknown</li>
+{% endfor %}
+</ul>

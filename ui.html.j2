@@ -14,7 +14,7 @@ title: {{ ui.Index }} {{ ui.Star }}
 <ul>
 {% for visualise in visualises_by_ui[ui.Index] %}
   <li>
-    <a href="/formats/#{{ visualise.Format }}">{{ visualise.Format }}</a>
+    <a href="/formats/{{ formats_by_name[visualise.Format].Slug }}/">{{ visualise.Format }}</a>
     {% if visualise.Docs %}
       [<a href="{{ visualise.Docs }}">Docs</a>]
     {% endif %}

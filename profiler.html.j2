@@ -10,7 +10,7 @@ title: {{ profiler.Index }} {{ profiler.Star }}
 <p>Output Formats:</p>
 <ul>
 {% for output in outputs_by_profiler[profiler.Index] %}
-  <li><a href="/formats/#{{ output.Format }}">{{ output.Format }}</a>
+  <li><a href="/formats/{{ formats_by_name[output.Format].Slug }}/">{{ output.Format }}</a>
     {% if output.Docs %}
       [<a href="{{ output.Docs }}">Docs</a>]
     {% endif %}
