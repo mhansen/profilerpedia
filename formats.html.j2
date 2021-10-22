@@ -20,7 +20,7 @@ description: Profiler's output file formats.
   <p>Visualise With:</p>
   <ul>
   {% for visualise in visualises_by_format[format.Index] %}
-    <li><a href="/uis/#{{ visualise.UI }}">{{ visualise.UI }}</a>
+    <li><a href="/uis/{{ uis_by_name[visualise.UI].Slug }}/">{{ visualise.UI }}</a>
       {% if visualise.Docs %}
        [<a href="{{ visualise.Docs }}">Docs</a>]
       {% endif %}

@@ -1,0 +1,25 @@
+---
+title: {{ ui.Index }} {{ ui.Star }}
+---
+{% if ui.Notes %}
+  <p>Notes: {{ ui.Notes }}</p>
+{% endif %}
+{% if ui.Site %}
+  <p><a href="{{ ui.Site }}">{{ ui.Site }}</a></p>
+{% endif %}
+{% if ui.Platform %}
+  <p>Platform: {{ ui.Platform }}</p>
+{% endif %}
+<p>Formats:</p>
+<ul>
+{% for visualise in visualises_by_ui[ui.Index] %}
+  <li>
+    <a href="/formats/#{{ visualise.Format }}">{{ visualise.Format }}</a>
+    {% if visualise.Docs %}
+      [<a href="{{ visualise.Docs }}">Docs</a>]
+    {% endif %}
+  </li>
+{% else %}
+  <li>Unknown</li>
+{% endfor %}
+</ul>
