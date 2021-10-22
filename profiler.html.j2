@@ -1,0 +1,21 @@
+---
+title: {{ profiler.Index }} {{ profiler.Star }}
+---
+{% if profiler.Platform %}
+  <p>Platform: {{ profiler.Platform }}</p>
+{% endif %}
+{% if profiler.Notes %}
+  <p>Notes: {{ profiler.Notes }}</p>
+{% endif %}
+<p>Output Formats:</p>
+<ul>
+{% for output in outputs_by_profiler[profiler.Index] %}
+  <li><a href="/formats/#{{ output.Format }}">{{ output.Format }}</a>
+    {% if output.Docs %}
+      [<a href="{{ output.Docs }}">Docs</a>]
+    {% endif %}
+  </li>
+{% else %}
+  <li>Unknown</li>
+{% endfor %}
+</ul>

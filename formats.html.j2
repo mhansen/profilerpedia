@@ -8,7 +8,7 @@ description: Profiler's output file formats.
   <p>Output By:</p>
   <ul>
   {% for output in outputs_by_format[format.Index] %}
-    <li><a href="/profilers/#{{ output.Profiler }}">{{ output.Profiler }}</a>
+    <li><a href="/profilers/{{ profilers_by_name[output.Profiler].Slug }}/">{{ output.Profiler }}</a>
       {% if output.Docs %}
        [<a href="{{ output.Docs }}">Docs</a>]
       {% endif %}
