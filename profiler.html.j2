@@ -2,20 +2,24 @@
 title: {{ profiler.Index }} {{ profiler.Star }}
 ---
 {% if profiler.Docs %}
-  <p><a href="{{ profiler.Docs }}">Docs</a></p>
+<p><a href="{{ profiler.Docs }}">Docs</a></p>
 {% endif %}
+
 {% if profiler.Platform %}
-  <p>Target Platform: {{ profiler.Platform }}</p>
+<p>Target Platform: {{ profiler.Platform }}</p>
 {% endif %}
+
 {% if profiler.Notes %}
-  <p>Notes: {{ profiler.Notes }}</p>
+<p>Notes: {{ profiler.Notes }}</p>
 {% endif %}
+
 <p>Output Formats:</p>
 <ul>
 {% for output in outputs_by_profiler[profiler.Index] %}
-  <li><a href="/formats/{{ formats_by_name[output.Format].Slug }}/">{{ output.Format }}</a>
+  <li>
+    <a href="/formats/{{ formats_by_name[output.Format].Slug }}/">{{ output.Format }}</a>
     {% if output.Docs %}
-      [<a href="{{ output.Docs }}">Docs</a>]
+    [<a href="{{ output.Docs }}">Docs</a>]
     {% endif %}
   </li>
 {% else %}
