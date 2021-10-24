@@ -7,3 +7,4 @@ title: {{ converter.Converter }}
 {% endif %}
 <p>Converts From: <a href="/formats/{{ formats_by_name[converter.From].Slug }}/">{{ converter.From }}</a></p>
 <p>Converts To: <a href="/formats/{{ formats_by_name[converter.To].Slug }}/">{{ converter.To }}</a></p>
+<p><object type="image/svg+xml" data="/converters/{{ converter.Slug }}.dot.svg"></object></p>
