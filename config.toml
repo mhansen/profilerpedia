@@ -22,16 +22,17 @@ enableMissingTranslationPlaceholders = true
 # You can add your own taxonomies
 [taxonomies]
 profiler_platform = "profiler_platforms"
+ui_platform = "ui_platforms"
 
 [params.taxonomy]
 # set taxonomyCloud = [] to hide taxonomy clouds
-taxonomyCloud = ["profiler_platforms"] 
+taxonomyCloud = ["profiler_platforms", "ui_platforms"] 
 
 # If used, must have same lang as taxonomyCloud
-taxonomyCloudTitle = ["Profiler Platforms"] 
+taxonomyCloudTitle = ["Profiler Platforms", "UI Platforms"] 
 
 # set taxonomyPageHeader = [] to hide taxonomies on the page headers
-taxonomyPageHeader = ["profiler_platforms"] 
+taxonomyPageHeader = ["profiler_platforms", "ui_platforms"] 
 
 
 # Highlighting config
