@@ -7,11 +7,15 @@
 {{ with .Params.file_format }}
   <p>File Format: {{ . }}</p>
 {{ end }}
+{{ with .Params.timestamping }}
+  <p>Timestamping: {{ . }}</p>
+{{ end }}
 {{ with .Params.notes }}
   <p>Notes: {{.}}</p>
 {{ end }}
-<p>🩺 Profilers that directly output this format:</p>
-<ul>
+<h2>Profilers 🩺 </h2>
+<p>Profilers that directly output this format:</p>
+<ul style="list-style-type: '🩺 ';">
 {{ range $output := .Params.outputs_ }}
   <li><a href="/profilers/{{ .profiler_slug }}/">{{ .profiler }}</a>
     {{ with .docs }}
@@ -23,8 +27,9 @@
   <li>Unknown</li>
 {{ end }}
 </ul>
-<p>📊 Analysis UIs that can read this format:</p>
-<ul>
+<h2>Analysis UIs 📊</h2>
+<p>Analysis UIs that can read this format:</p>
+<ul style="list-style-type: '📊 ';">
 {{ range $visualise := .Params.visualises }}
   <li><a href="/uis/{{ .ui_slug }}/">{{ .ui }}</a>
     {{ with .docs }}
@@ -36,8 +41,9 @@
   <li>Unknown</li>
 {{ end }}
 </ul>
-<p>⬅️ This format is convertable from:</p>
-<ul>
+<h2>Converters</h2>
+<p>This format is convertable from:</p>
+<ul style="list-style-type: '⬅ ';">
 {{ range $converter := .Params.convertable_from }}
   <li>
     <a href="/formats/{{ .format_slug }}/">{{ .format }}</a>,
@@ -52,8 +58,8 @@
   <li>Unknown</li>
 {{ end }}
 </ul>
-<p>➡️ This format is convertable to:</p>
-<ul>
+<p> This format is convertable to:</p>
+<ul style="list-style-type: '➡ ';">
 {{ range $converter := .Params.convertable_to }}
   <li>
     <a href="/formats/{{ .format_slug }}/">{{ .format }}</a>,
