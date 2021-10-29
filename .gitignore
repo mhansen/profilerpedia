@@ -3,3 +3,11 @@ node_modules/
 env/
 public/
 resources/_gen/
+content/en/converters/*
+!content/en/converters/_index.md
+content/en/formats/*
+!content/en/formats/_index.md
+content/en/profilers/*
+!content/en/profilers/_index.md
+content/en/uis/*
+!content/en/uis/_index.md
