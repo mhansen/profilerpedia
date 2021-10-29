@@ -1,0 +1,68 @@
+{{ with .Params.project_site }}
+  <p><a href="{{.}}">Project Site</a></p>
+{{ end }}
+{{ with .Params.schema }}
+  <p><a href="{{.}}">Schema</a></p>
+{{ end }}
+{{ with .Params.notes }}
+  <p>Notes: {{.}}</p>
+{{ end }}
+<p>🩺 Profilers that directly output this format:</p>
+<ul>
+{{ range $output := .Params.outputs_ }}
+  <li><a href="/profilers/{{ .profiler_slug }}/">{{ .profiler }}</a>
+    {{ with .docs }}
+      [<a href="{{ . }}">Docs</a>]
+    {{ end }}
+  </li>
+{{ end }}
+{{ if not .Params.outputs_ }}
+  <li>Unknown</li>
+{{ end }}
+</ul>
+<p>📊 Analysis UIs that can read this format:</p>
+<ul>
+{{ range $visualise := .Params.visualises }}
+  <li><a href="/uis/{{ .ui_slug }}/">{{ .ui }}</a>
+    {{ with .docs }}
+      [<a href="{{ . }}">Docs</a>]
+    {{ end }}
+  </li>
+{{ end }}
+{{ if not .Params.visualises }}
+  <li>Unknown</li>
+{{ end }}
+</ul>
+<p>⬅️ This format is convertable from:</p>
+<ul>
+{{ range $converter := .Params.convertable_from }}
+  <li>
+    <a href="/formats/{{ .format_slug }}/">{{ .format }}</a>,
+    via
+    <a href="/converters/{{ .converter_slug }}/">{{ .converter }}</a>
+    {{ with .docs }}
+      [<a href="{{ . }}">Docs</a>]
+    {{ end }}
+  </li>
+{{ end }}
+{{ if not .Params.convertable_from }}
+  <li>Unknown</li>
+{{ end }}
+</ul>
+<p>➡️ This format is convertable to:</p>
+<ul>
+{{ range $converter := .Params.convertable_to }}
+  <li>
+    <a href="/formats/{{ .format_slug }}/">{{ .format }}</a>,
+    via
+    <a href="/converters/{{ .converter_slug }}/">{{ .converter }}</a>
+    {{ with .docs }}
+      [<a href="{{ . }}">Docs</a>]
+    {{ end }}
+  </li>
+{{ end }}
+{{ if not .Params.convertable_to }}
+  <li>Unknown</li>
+{{ end }}
+</ul>
+<p><object type="image/svg+xml" data="/formats/{{ .Params.slug }}.dot.svg"></object></p>
