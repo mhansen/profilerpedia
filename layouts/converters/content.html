@@ -1,0 +1,13 @@
+{{ with .Params.docs }}
+<p><a href="{{ . }}">Docs</a></p>
+{{ end }}
+{{ with .Params.note }}
+<p>{{ . }}</p>
+{{ end }}
+{{ with .Params.converts_from }}
+<p>Converts From: <a href="/formats/{{ .slug }}/">{{ .name }}</a></p>
+{{ end}}
+{{ with .Params.converts_to }}
+<p>Converts To: <a href="/formats/{{ .slug }}/">{{ .name }}</a></p>
+{{ end}}
+<p><object type="image/svg+xml" data="/converters/{{ .Params.slug }}.dot.svg"></object></p>
