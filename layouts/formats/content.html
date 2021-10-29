@@ -4,6 +4,9 @@
 {{ with .Params.schema }}
   <p><a href="{{.}}">Schema</a></p>
 {{ end }}
+{{ with .Params.file_format }}
+  <p>File Format: {{ . }}</p>
+{{ end }}
 {{ with .Params.notes }}
   <p>Notes: {{.}}</p>
 {{ end }}
