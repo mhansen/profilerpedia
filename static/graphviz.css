@@ -1,2 +1,7 @@
-text {
+.current {
+  font-weight: bold;
+}
+
+a text {
+  fill: #3176d9;
 }
