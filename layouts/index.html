@@ -18,6 +18,14 @@
 		{{ end }}
 	</header>
 	{{ .Content }}
+	<h2>Statistics</h2>
+	<p>Profilerpedia maps and connects:</p>
+	<ul>
+		<li><a href="/profilers">{{ len (.Site.GetPage "/profilers").Pages }} Profilers</a></li>
+		<li><a href="/formats">{{ len (.Site.GetPage "/formats").Pages }} Data Formats</a></li>
+		<li><a href="/converters">{{ len (.Site.GetPage "/converters").Pages }} Converters</a></li>
+		<li><a href="/uis">{{ len (.Site.GetPage "/uis").Pages }} Analysis UIs</a></li>
+	</ul>
 	<h2>Starred Profilers</h2>
 	{{ with .Site.GetPage  "/profilers" }}
 		<ul>
