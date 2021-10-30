@@ -13,9 +13,9 @@
 {{ with .Params.notes }}
   <p>Notes: {{.}}</p>
 {{ end }}
-<h2>Profilers 🩺 </h2>
+<h2>Profilers 🔎</h2>
 <p>Profilers that directly output this format:</p>
-<ul style="list-style-type: '🩺 ';">
+<ul style="list-style-type: '🔎 ';">
 {{ range $output := .Params.outputs_ }}
   <li><a href="/profilers/{{ .profiler_slug }}/">{{ .profiler }}</a>
     {{ with .docs }}
