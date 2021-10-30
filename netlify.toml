@@ -1,5 +1,5 @@
 [build]
-  command = "git submodule update --init --recursive && jupyter nbconvert --to notebook --inplace --execute Generate.ipynb && hugo"
+  command = "git submodule update --init --recursive && jupyter nbconvert --to notebook --inplace --execute Generate.ipynb && hugo --baseURL https://profilerpedia.markhansen.co.nz/"
   publish = "public"
 
 [build.environment]
