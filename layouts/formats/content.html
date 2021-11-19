@@ -77,6 +77,13 @@
 <h2>Profiler & Analysis UI Graph</h2>
 <p><a href="/formats/{{ .Params.slug }}.dot.svg">[View graph fullscreen]</a></p>
 <p><object type="image/svg+xml" data="/formats/{{ .Params.slug }}.dot.svg"></object></p>
-<h2>Format Conversion Graph</h2>
-<p><a href="/formats/{{ .Params.slug }}.converters.dot.svg">[View graph fullscreen]</a></p>
-<p><object type="image/svg+xml" data="/formats/{{ .Params.slug }}.converters.dot.svg"></object></p>
+{{ if len .Params.convertable_from }}
+<h2>Converts From Graph</h2>
+<p><a href="/formats/{{ .Params.slug }}.backwards.dot.svg">[View graph fullscreen]</a></p>
+<p><object type="image/svg+xml" data="/formats/{{ .Params.slug }}.backwards.dot.svg"></object></p>
+{{ end }}
+{{ if len .Params.convertable_to }}
+<h2>Converts To Graph</h2>
+<p><a href="/formats/{{ .Params.slug }}.forwards.dot.svg">[View graph fullscreen]</a></p>
+<p><object type="image/svg+xml" data="/formats/{{ .Params.slug }}.forwards.dot.svg"></object></p>
+{{ end }}
