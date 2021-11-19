@@ -13,7 +13,7 @@
 {{ with .Params.notes }}
   <p>Notes: {{.}}</p>
 {{ end }}
-<h2>Profilers 🔎</h2>
+<h2 id="profilers">Profilers 🔎</h2>
 <p>{{ len .Params.outputs_ }} Profilers directly output this format:</p>
 <ul style="list-style-type: '🔎 ';">
 {{ range $output := .Params.outputs_ }}
@@ -27,7 +27,7 @@
   <li>Unknown</li>
 {{ end }}
 </ul>
-<h2>Analysis UIs 📊</h2>
+<h2 id="uis">Analysis UIs 📊</h2>
 <p>{{ len .Params.visualises }} Analysis UIs can read this format:</p>
 <ul style="list-style-type: '📊 ';">
 {{ range $visualise := .Params.visualises }}
@@ -41,7 +41,7 @@
   <li>Unknown</li>
 {{ end }}
 </ul>
-<h2>Converters</h2>
+<h2 id="converters">Converters</h2>
 <p>This format is directly convertable from {{ len .Params.convertable_from }} formats:</p>
 <ul style="list-style-type: '⬅ ';">
 {{ range $converter := .Params.convertable_from }}
