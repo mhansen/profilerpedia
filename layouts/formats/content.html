@@ -15,7 +15,7 @@
 {{ end }}
 <h2 id="profilers">Profilers 🔎</h2>
 <p>{{ len .Params.outputs_ }} Profilers directly output this format:</p>
-<ul style="list-style-type: '🔎 ';">
+<ul style="list-style-type: '🔎 '; text-indent: 0.5em">
 {{ range $output := .Params.outputs_ }}
   <li><a href="/profilers/{{ .profiler_slug }}/">{{ .profiler }}</a>
     {{ with .docs }}
@@ -29,7 +29,7 @@
 </ul>
 <h2 id="uis">Analysis UIs 📊</h2>
 <p>{{ len .Params.visualises }} Analysis UIs can read this format:</p>
-<ul style="list-style-type: '📊 ';">
+<ul style="list-style-type: '📊 '; text-indent: 0.5em">
 {{ range $visualise := .Params.visualises }}
   <li><a href="/uis/{{ .ui_slug }}/">{{ .ui }}</a>
     {{ with .docs }}
@@ -43,7 +43,7 @@
 </ul>
 <h2 id="converters">Converters</h2>
 <p>This format is directly convertable from {{ len .Params.convertable_from }} formats:</p>
-<ul style="list-style-type: '⬅ ';">
+<ul style="list-style-type: '⬅ '; text-indent: 0.5em">
 {{ range $converter := .Params.convertable_from }}
   <li>
     <a href="/formats/{{ .format_slug }}/">{{ .format }}</a>,
@@ -59,7 +59,7 @@
 {{ end }}
 </ul>
 <p> This format is directly convertable to {{ len .Params.convertable_to }} formats:</p>
-<ul style="list-style-type: '➡ ';">
+<ul style="list-style-type: '➡ '; text-indent: 0.5em">
 {{ range $converter := .Params.convertable_to }}
   <li>
     <a href="/formats/{{ .format_slug }}/">{{ .format }}</a>,
