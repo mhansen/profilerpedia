@@ -71,7 +71,7 @@ anchor = "smart"
 [languages]
 [languages.en]
 title = "Profilerpedia"
-description = "Catalog of profilers, profile data formats, converters, and profile analysis UIs."
+description = "A catalog/survey of the software profiling ecosystem: profilers, their data formats, converters, and analysis UIs."
 languageName ="English"
 # Weight used for sorting.
 weight = 1
@@ -159,7 +159,7 @@ sidebar_search_disable = true
 # Don't truncate
 sidebar_menu_truncate = 1000
 
-# Sidebar generation is slow
+# Sidebar generation is slow otherwise
 sidebar_cache_limit = 100
 
 # Don't show them all
