@@ -44,7 +44,7 @@
 
 <h2>Profiler & Analysis UI Graph</h2>
 <p><a href="/formats/{{ .Params.slug }}.dot.svg">[View graph fullscreen]</a></p>
-<p><object type="image/svg+xml" data="/formats/{{ .Params.slug }}.dot.svg"></object></p>
+<p><object class="graphviz" type="image/svg+xml" data="/formats/{{ .Params.slug }}.dot.svg"></object></p>
 
 <h2 id="converters">Converters</h2>
 <h3 id="converts-from">Converts From</h3>
@@ -65,7 +65,7 @@
 {{ if len .Params.convertable_from }}
 <h4 id="converts-from-transitive">Transitive Formats</h4>
 <p>Transitive formats you can convert from <a href="/formats/{{ .Params.slug }}.backwards.dot.svg">[View fullscreen]</a>:</p>
-<p><object type="image/svg+xml" data="/formats/{{ .Params.slug }}.backwards.dot.svg"></object></p>
+<p><object class="graphviz" type="image/svg+xml" data="/formats/{{ .Params.slug }}.backwards.dot.svg"></object></p>
 {{ end }}
 
 <h3 id="converts-to">Converts To</h3>
@@ -86,5 +86,5 @@
 {{ if len .Params.convertable_to }}
 <h4 id="converts-to-transitive">Transitive Formats</h4>
 <p>Transitive formats you can convert to <a href="/formats/{{ .Params.slug }}.forwards.dot.svg">[View fullscreen]</a>:</p>
-<p><object type="image/svg+xml" data="/formats/{{ .Params.slug }}.forwards.dot.svg"></object></p>
+<p><object class="graphviz" type="image/svg+xml" data="/formats/{{ .Params.slug }}.forwards.dot.svg"></object></p>
 {{ end }}
