@@ -41,7 +41,13 @@
   <li>Unknown</li>
 {{ end }}
 </ul>
+
+<h2>Profiler & Analysis UI Graph</h2>
+<p><a href="/formats/{{ .Params.slug }}.dot.svg">[View graph fullscreen]</a></p>
+<p><object type="image/svg+xml" data="/formats/{{ .Params.slug }}.dot.svg"></object></p>
+
 <h2 id="converters">Converters</h2>
+<h3 id="converts-from">Converts From</h3>
 <p>This format is directly convertable from {{ len .Params.convertable_from }} formats:</p>
 <ul style="list-style-type: '⬅ '; text-indent: 0.5em">
 {{ range $converter := .Params.convertable_from }}
@@ -54,11 +60,16 @@
     {{ end }}
   </li>
 {{ end }}
-{{ if not .Params.convertable_from }}
-  <li>Unknown</li>
-{{ end }}
 </ul>
-<p> This format is directly convertable to {{ len .Params.convertable_to }} formats:</p>
+
+{{ if len .Params.convertable_from }}
+<h4 id="converts-from-transitive">Transitive Formats</h4>
+<p>Transitive formats you can convert from <a href="/formats/{{ .Params.slug }}.backwards.dot.svg">[View fullscreen]</a>:</p>
+<p><object type="image/svg+xml" data="/formats/{{ .Params.slug }}.backwards.dot.svg"></object></p>
+{{ end }}
+
+<h3 id="converts-to">Converts To</h3>
+<p>This format is directly convertable to {{ len .Params.convertable_to }} formats:</p>
 <ul style="list-style-type: '➡ '; text-indent: 0.5em">
 {{ range $converter := .Params.convertable_to }}
   <li>
@@ -70,20 +81,10 @@
     {{ end }}
   </li>
 {{ end }}
-{{ if not .Params.convertable_to }}
-  <li>Unknown</li>
-{{ end }}
 </ul>
-<h2>Profiler & Analysis UI Graph</h2>
-<p><a href="/formats/{{ .Params.slug }}.dot.svg">[View graph fullscreen]</a></p>
-<p><object type="image/svg+xml" data="/formats/{{ .Params.slug }}.dot.svg"></object></p>
-{{ if len .Params.convertable_from }}
-<h2>Converts From Graph</h2>
-<p><a href="/formats/{{ .Params.slug }}.backwards.dot.svg">[View graph fullscreen]</a></p>
-<p><object type="image/svg+xml" data="/formats/{{ .Params.slug }}.backwards.dot.svg"></object></p>
-{{ end }}
+
 {{ if len .Params.convertable_to }}
-<h2>Converts To Graph</h2>
-<p><a href="/formats/{{ .Params.slug }}.forwards.dot.svg">[View graph fullscreen]</a></p>
+<h4 id="converts-to-transitive">Transitive Formats</h4>
+<p>Transitive formats you can convert to <a href="/formats/{{ .Params.slug }}.forwards.dot.svg">[View fullscreen]</a>:</p>
 <p><object type="image/svg+xml" data="/formats/{{ .Params.slug }}.forwards.dot.svg"></object></p>
 {{ end }}
