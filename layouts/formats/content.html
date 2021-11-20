@@ -43,53 +43,88 @@
 </ul>
 
 <h2>Profiler & Analysis UI Graph</h2>
-<p><a href="/formats/{{ .Params.slug }}.dot.svg">[View graph fullscreen]</a></p>
 <p><object class="graphviz" type="image/svg+xml" data="/formats/{{ .Params.slug }}.dot.svg"></object></p>
+<p><a href="/formats/{{ .Params.slug }}.dot.svg">[View fullscreen]</a></p>
 
 <h2 id="converters">Converters</h2>
 <h3 id="converts-from">Converts From</h3>
 {{ if len .Params.convertable_from }}
-<p>This format is directly convertable from {{ len .Params.convertable_from }} formats:</p>
-<ul style="list-style-type: '⬅ '; text-indent: 0.5em">
-{{ range $converter := .Params.convertable_from }}
-  <li>
-    <a href="/formats/{{ .format_slug }}/">{{ .format }}</a>,
-    via
-    <a href="/converters/{{ .converter_slug }}/">{{ .converter }}</a>
-    {{ with .docs }}
-      [<a href="{{ . }}">Docs</a>]
-    {{ end }}
-  </li>
-{{ end }}
-</ul>
+  <p>This format is directly convertable from {{ len .Params.convertable_from }} formats:</p>
+  <ul style="list-style-type: '⬅ '; text-indent: 0.5em">
+  {{ range $converter := .Params.convertable_from }}
+    <li>
+      <a href="/formats/{{ .format_slug }}/">{{ .format }}</a>,
+      via
+      <a href="/converters/{{ .converter_slug }}/">{{ .converter }}</a>
+      {{ with .docs }}
+        [<a href="{{ . }}">Docs</a>]
+      {{ end }}
+    </li>
+  {{ end }}
+  </ul>
 
-<h4 id="converts-from-transitive">Transitive Formats</h4>
-<p>Transitive formats you can convert from <a href="/formats/{{ .Params.slug }}.backwards.dot.svg">[View fullscreen]</a>:</p>
-<p><object class="graphviz" type="image/svg+xml" data="/formats/{{ .Params.slug }}.backwards.dot.svg"></object></p>
+  <h4 id="converts-from-transitive">Transitive Formats</h4>
+  <p>Transitive formats you can convert from:</p>
 
+  <ul class="nav nav-tabs" id="myTab" role="tablist">
+    <li class="nav-item" role="presentation">
+      <a class="nav-link" id="profile-tab" data-bs-toggle="tab" data-target="#from-formats-only" type="button" role="tab" aria-controls="profile" aria-selected="false" data-toggle="list">Data Formats Only</a>
+    </li>
+    <li class="nav-item" role="presentation">
+      <a class="nav-link active" id="profilers-and-formats-tab" data-bs-toggle="tab" data-target="#profilers-and-formats" type="button" role="tab" aria-controls="home" aria-selected="true" data-toggle="list">Profilers + Data Formats (large graph)</a>
+    </li>
+  </ul>
+  <div class="tab-content" id="myTabContent">
+    <div class="tab-pane fade" id="from-formats-only" role="tabpanel" aria-labelledby="profile-tab">
+      <object class="graphviz" type="image/svg+xml" data="/formats/{{ .Params.slug }}.backwards.dot.svg"></object>
+      <a href="/formats/{{ .Params.slug }}.backwards.dot.svg">[View fullscreen]</a>
+    </div>
+    <div class="tab-pane fade show active" id="profilers-and-formats" role="tabpanel" aria-labelledby="profilers-and-formats-tab">
+      <object class="graphviz" type="image/svg+xml" data="/formats/{{ .Params.slug }}.backwards_profilers.dot.svg"></object>
+      <a href="/formats/{{ .Params.slug }}.backwards_profilers.dot.svg">[View fullscreen]</a>
+    </div>
+  </div>
 {{ else }}
-<p>This format is directly convertable from 0 formats.</p>
+  <p>This format is directly convertable from 0 formats.</p>
 {{ end }}
 
 <h3 id="converts-to">Converts To</h3>
 {{ if len .Params.convertable_to }}
-<p>This format is directly convertable to {{ len .Params.convertable_to }} formats:</p>
-<ul style="list-style-type: '➡ '; text-indent: 0.5em">
-{{ range $converter := .Params.convertable_to }}
-  <li>
-    <a href="/formats/{{ .format_slug }}/">{{ .format }}</a>,
-    via
-    <a href="/converters/{{ .converter_slug }}/">{{ .converter }}</a>
-    {{ with .docs }}
-      [<a href="{{ . }}">Docs</a>]
-    {{ end }}
-  </li>
-{{ end }}
-</ul>
+  <p>This format is directly convertable to {{ len .Params.convertable_to }} formats:</p>
+  <ul style="list-style-type: '➡ '; text-indent: 0.5em">
+  {{ range $converter := .Params.convertable_to }}
+    <li>
+      <a href="/formats/{{ .format_slug }}/">{{ .format }}</a>,
+      via
+      <a href="/converters/{{ .converter_slug }}/">{{ .converter }}</a>
+      {{ with .docs }}
+        [<a href="{{ . }}">Docs</a>]
+      {{ end }}
+    </li>
+  {{ end }}
+  </ul>
 
-<h4 id="converts-to-transitive">Transitive Formats</h4>
-<p>Transitive formats you can convert to <a href="/formats/{{ .Params.slug }}.forwards.dot.svg">[View fullscreen]</a>:</p>
-<p><object class="graphviz" type="image/svg+xml" data="/formats/{{ .Params.slug }}.forwards.dot.svg"></object></p>
+  <h4 id="converts-to-transitive">Transitive Formats</h4>
+
+  <p>Transitive formats you can convert to:<p>
+  <ul class="nav nav-tabs" id="convertToTab" role="tablist">
+    <li class="nav-item" role="presentation">
+      <a class="nav-link" id="profile-tab" data-bs-toggle="tab" data-target="#formats-only" type="button" role="tab" aria-controls="profile" aria-selected="false" data-toggle="list">Data Formats Only</a>
+    </li>
+    <li class="nav-item" role="presentation">
+      <a class="nav-link active" id="home-tab" data-bs-toggle="tab" data-target="#formats-and-uis" type="button" role="tab" aria-controls="home" aria-selected="true" data-toggle="list">Data Formats + Analysis UIs (large graph)</a>
+    </li>
+  </ul>
+  <div class="tab-content" id="convertToTabContent">
+    <div class="tab-pane fade" id="formats-only" role="tabpanel" aria-labelledby="profile-tab">
+      <object class="graphviz" type="image/svg+xml" data="/formats/{{ .Params.slug }}.forwards.dot.svg"></object>
+      <a href="/formats/{{ .Params.slug }}.forwards.dot.svg">[View fullscreen]</a></p>
+    </div>
+    <div class="tab-pane fade show active" id="formats-and-uis" role="tabpanel" aria-labelledby="home-tab">
+      <object class="graphviz include" type="image/svg+xml" data="/formats/{{ .Params.slug }}.forwards_uis.dot.svg"></object>
+      <a href="/formats/{{ .Params.slug }}.forwards_uis.dot.svg">[View fullscreen]</a></p>
+    </div>
+  </div>
 {{ else }}
-<p>This format is directly convertable to 0 formats.</p>
+  <p>This format is directly convertable to 0 formats.</p>
 {{ end }}
