@@ -43,8 +43,10 @@
 </ul>
 
 <h2>Profiler & Analysis UI Graph</h2>
-<p><object class="graphviz" type="image/svg+xml" data="/formats/{{ .Params.slug }}.dot.svg"></object></p>
-<p><a href="/formats/{{ .Params.slug }}.dot.svg">[View fullscreen]</a></p>
+<p>
+  <object class="graphviz" type="image/svg+xml" data="/formats/{{ .Params.slug }}.dot.svg"></object>
+  <br><a href="/formats/{{ .Params.slug }}.dot.svg">[View fullscreen]</a>
+</p>
 
 <h2 id="converters">Converters</h2>
 <h3 id="converts-from">Converts From</h3>
@@ -77,11 +79,11 @@
   <div class="tab-content" id="myTabContent">
     <div class="tab-pane fade" id="from-formats-only" role="tabpanel" aria-labelledby="profile-tab">
       <object class="graphviz" type="image/svg+xml" data="/formats/{{ .Params.slug }}.backwards.dot.svg"></object>
-      <a href="/formats/{{ .Params.slug }}.backwards.dot.svg">[View fullscreen]</a>
+      <br><a href="/formats/{{ .Params.slug }}.backwards.dot.svg">[View fullscreen]</a>
     </div>
     <div class="tab-pane fade show active" id="profilers-and-formats" role="tabpanel" aria-labelledby="profilers-and-formats-tab">
       <object class="graphviz" type="image/svg+xml" data="/formats/{{ .Params.slug }}.backwards_profilers.dot.svg"></object>
-      <a href="/formats/{{ .Params.slug }}.backwards_profilers.dot.svg">[View fullscreen]</a>
+      <br><a href="/formats/{{ .Params.slug }}.backwards_profilers.dot.svg">[View fullscreen]</a>
     </div>
   </div>
 {{ else }}
@@ -118,11 +120,11 @@
   <div class="tab-content" id="convertToTabContent">
     <div class="tab-pane fade" id="formats-only" role="tabpanel" aria-labelledby="profile-tab">
       <object class="graphviz" type="image/svg+xml" data="/formats/{{ .Params.slug }}.forwards.dot.svg"></object>
-      <a href="/formats/{{ .Params.slug }}.forwards.dot.svg">[View fullscreen]</a></p>
+      <br><a href="/formats/{{ .Params.slug }}.forwards.dot.svg">[View fullscreen]</a>
     </div>
     <div class="tab-pane fade show active" id="formats-and-uis" role="tabpanel" aria-labelledby="home-tab">
       <object class="graphviz include" type="image/svg+xml" data="/formats/{{ .Params.slug }}.forwards_uis.dot.svg"></object>
-      <a href="/formats/{{ .Params.slug }}.forwards_uis.dot.svg">[View fullscreen]</a></p>
+      <br><a href="/formats/{{ .Params.slug }}.forwards_uis.dot.svg">[View fullscreen]</a>
     </div>
   </div>
 {{ else }}

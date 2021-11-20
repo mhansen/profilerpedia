@@ -19,4 +19,23 @@
 {{ end }}
 </ul>
 {{ .Content }}
-<p><object class="graphviz" type="image/svg+xml" data="/profilers/{{ .Params.slug }}.dot.svg"></object></p>
+<h2 id="graph">Graph</h2>
+
+<ul class="nav nav-tabs" id="convertToTab" role="tablist">
+  <li class="nav-item" role="presentation">
+    <a class="nav-link" id="profile-tab" data-bs-toggle="tab" data-target="#direct" type="button" role="tab" aria-controls="profile" aria-selected="false" data-toggle="list">Direct</a>
+  </li>
+  <li class="nav-item" role="presentation">
+    <a class="nav-link active" id="home-tab" data-bs-toggle="tab" data-target="#transitive" type="button" role="tab" aria-controls="home" aria-selected="true" data-toggle="list">Including Transitive Data Conversions (large graph)</a>
+  </li>
+</ul>
+<div class="tab-content" id="convertToTabContent">
+  <div class="tab-pane fade" id="direct" role="tabpanel" aria-labelledby="profile-tab">
+    <object class="graphviz" type="image/svg+xml" data="/profilers/{{ .Params.slug }}.dot.svg"></object>
+    <br><a href="/profilers/{{ .Params.slug }}.dot.svg">[View fullscreen]</a>
+  </div>
+  <div class="tab-pane fade show active" id="transitive" role="tabpanel" aria-labelledby="home-tab">
+    <object class="graphviz" type="image/svg+xml" data="/profilers/{{ .Params.slug }}.transitive.dot.svg"></object>
+    <br><a href="/profilers/{{ .Params.slug }}.transitive.dot.svg">[View fullscreen]</a>
+  </div>
+</div>
