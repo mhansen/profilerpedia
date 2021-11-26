@@ -29,7 +29,7 @@ ui_platform = "ui_platforms"
 taxonomyCloud = ["profiler_platforms", "ui_platforms"] 
 
 # If used, must have same lang as taxonomyCloud
-taxonomyCloudTitle = ["Profiler Platforms", "UI Platforms"] 
+taxonomyCloudTitle = ["Profiler Targets", "UI Platforms"] 
 
 # set taxonomyPageHeader = [] to hide taxonomies on the page headers
 taxonomyPageHeader = ["profiler_platforms", "ui_platforms"] 
