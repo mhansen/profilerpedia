@@ -20,3 +20,9 @@ Prior Art / Similar efforts:
 - [Wikipedia: Category:Profilers](https://en.wikipedia.org/wiki/Category:Profilers)
 - [D. Maplesden, E. Tempero, J. Hosking and J. C. Grundy, "Performance Analysis for Object-Oriented Software: A Systematic Mapping," in IEEE Transactions on Software Engineering, vol. 41, no. 7, pp. 691-710, 1 July 2015, doi: 10.1109/TSE.2015.2396514.](https://www.cs.auckland.ac.nz/~dmap001/slr.pdf)
 - [Okanović D., van Hoorn A., Heger C., Wert A., Siegl S. (2016) Towards Performance Tooling Interoperability: An Open Format for Representing Execution Traces. In: Fiems D., Paolieri M., Platis A. (eds) Computer Performance Engineering. EPEW 2016. Lecture Notes in Computer Science, vol 9951. Springer, Cham.](http://dx.doi.org/10.1007/978-3-319-46433-6_7)
+- [Virtual Institute - High Productivity
+  Supercomputing](https://www.vi-hps.org/) maintains a [Tool Guide of profiling
+  and debugging tools, mainly focusing on
+  supercomputers](https://www.vi-hps.org/tools/tools.html).
+
+
